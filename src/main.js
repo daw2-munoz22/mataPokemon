@@ -16,7 +16,7 @@ document.querySelector('#header').innerHTML = header.template
 header.script()
 document.querySelector('#footer').innerHTML = footer.template
 document.querySelector('#main').innerHTML = pruebas.template
-pruebas.script()
+
 //document.querySelector('#main').innerHTML = new Pokemon
 enrutador.observadorRutas()
 //enrutador.router()

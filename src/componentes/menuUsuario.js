@@ -39,7 +39,7 @@ export const menuUsuario = {
       </li>
     </ul>
   `,
-  script: (perfilLogueado) => {
+  script: async (perfilLogueado) => {
     const items = {
       anonimo: `
         <li class="text-center" id="rolUsuarioLogueado">
@@ -162,7 +162,9 @@ export const menuUsuario = {
       // Insertamos la foto del avatar
       document.querySelector('#imgAvatar').src = imgAvatar
       // Insertamos el email del usuario
-      document.querySelector('#emailUsuarioLogueado').innerHTML = perfilLogueado.email
+      const usuarioLogueado = await User.getUser()
+      console.log(usuarioLogueado)
+      document.querySelector('#emailUsuarioLogueado').innerHTML = usuarioLogueado.email
       // Insertamos el rol
       document.querySelector('#rolUsuarioLogueado').innerHTML = perfilLogueado.rol
 
@@ -183,9 +185,9 @@ export const menuUsuario = {
     }
 
     // Gestionamos click en editar perfil
-    document.querySelector('#editarPerfil').addEventListener('click', (e) => {
-      e.preventDefault()
-      // formEditarPerfil.script()
-    })
+    // document.querySelector('#editarPerfil').addEventListener('click', (e) => {
+    //   e.preventDefault()
+    //   // formEditarPerfil.script()
+    // })
   }
 }

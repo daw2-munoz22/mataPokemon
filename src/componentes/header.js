@@ -50,6 +50,7 @@ ${formEditarPerfil.template}
       const usuarioLogueado = await User.getUser()
       if (usuarioLogueado) {
         const perfilLogueado = await Perfil.getByUserId(usuarioLogueado.id)
+
         // cargamos el menú superior y usuario para su rol
         menuSuperior.script(perfilLogueado)
         menuUsuario.script(perfilLogueado)

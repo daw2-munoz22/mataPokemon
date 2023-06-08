@@ -69,6 +69,7 @@ export default {
           // Cagamos la página home
           //console.log('te has logueado')
           // Si nos logueamos con exito pintamos el email en header y menú de usuario
+          console.log("logeado con exito")
           const divUsuarioLogeado = document.querySelectorAll('#emailUsuarioLogueado')
           divUsuarioLogeado[0].innerHTML = usuarioLogeado.email
           window.location.href = '/#/home'

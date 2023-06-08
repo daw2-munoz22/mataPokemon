@@ -75,7 +75,7 @@ export default {
           apellidos: document.querySelector('#apellidosRegistro').value,
           nick: document.querySelector('#nickRegistro').value,
           rol: 'registrado',
-          user_id: nuevoUser.id, // Tomamos el id que nos devuelve el registro
+          user_id: nuevoUser.id // Tomamos el id que nos devuelve el registro
         }
         
         await Perfil.create(perfilData)

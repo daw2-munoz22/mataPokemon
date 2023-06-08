@@ -58,9 +58,7 @@ export class Perfil {
   static async create (perfilData) {
     const { error } = await supabase
       .from('perfiles')
-      .insert([
-        { id: perfilData.id, created_at: perfilData.created_at, nombre: perfilData.nombre, apellidos: perfilData.apellidos, user_id: perfilData.user_id, avatar: perfilData.avatar, nick: perfilData.nick, rol: perfilData.rol}
-      ])
+      .insert(perfilData)
       .select()
       // console.log('nuevo perfil ',error);
     if (error) {
